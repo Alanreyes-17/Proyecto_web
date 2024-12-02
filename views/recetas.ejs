@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Saludables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .receta {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            /* Cambia el cursor para indicar que es interactivo */
+        }
+
+        .receta h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .detalles {
+            display: none;
+            /* Oculta los detalles por defecto */
+            margin-top: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recetas Saludables</h1>
+
+    <div class="receta" onclick="toggleDetalles('detalles1')">
+        <h2>Brownies de Chocolate Saludables</h2>
+        <div id="detalles1" class="detalles">
+            <p><strong>Ingredientes:</strong> 1 taza de puré de aguacate, 1/2 taza de miel, 1/2 taza de cacao en polvo,
+                2 huevos, 1 cucharadita de extracto de vainilla.</p>
+            <p><strong>Instrucciones:</strong> Mezcla todos los ingredientes hasta obtener una mezcla homogénea. Hornea
+                a 180°C durante 20 minutos.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles2')">
+        <h2>Helado de Plátano Natural</h2>
+        <div id="detalles2" class="detalles">
+            <p><strong>Ingredientes:</strong> 2 plátanos maduros, 1 cucharada de mantequilla de almendra.</p>
+            <p><strong>Instrucciones:</strong> Congela los plátanos, luego tritúralos y mezcla con la mantequilla de
+                almendra. Sirve inmediatamente.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles3')">
+        <h2>Ensalada de Quinoa</h2>
+        <div id="detalles3" class="detalles">
+            <p><strong>Ingredientes:</strong> 1 taza de quinoa cocida, 1/2 taza de pepino picado, 1/2 taza de tomate
+                cherry, 1/4 taza de cebolla roja, 1/4 taza de perejil picado, jugo de 1 limón.</p>
+            <p><strong>Instrucciones:</strong> Mezcla todos los ingredientes en un bol y sirve fría.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles4')">
+        <h2>Tortilla de Espinacas</h2>
+        <div id="detalles4" class="detalles">
+            <p><strong>Ingredientes:</strong> 4 huevos, 1 taza de espinacas frescas, 1/4 taza de queso feta, sal y
+                pimienta al gusto.</p>
+            <p><strong>Instrucciones:</strong> Bate los huevos y mezcla con las espinacas. Cocina en una sartén hasta
+                que esté firme y añade el queso feta.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles5')">
+        <h2>Batido de Frutas</h2>
+        <div id="detalles5" class="detalles">
+            <p><strong>Ingredientes:</strong> 1 plátano, 1 taza de fresas, 1 taza de espinacas, 1 taza de leche de
+                almendras.</p>
+            <p><strong>Instrucciones:</strong> Mezcla todos los ingredientes en una licuadora hasta obtener una mezcla
+                suave. Sirve frío.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles6')">
+        <h2>Galletas de Avena y Plátano</h2>
+        <div id="detalles6" class="detalles">
+            <p><strong>Ingredientes:</strong> 2 plátanos maduros, 1 taza de avena, 1/2 taza de chispas de chocolate.</p>
+            <p><strong>Instrucciones:</strong> Precalienta el horno a 180°C. Mezcla todos los ingredientes y forma
+                pequeñas galletas en una bandeja. Hornea durante 15 minutos.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles7')">
+        <h2>Wrap de Pollo y Verduras</h2>
+        <div id="detalles7" class="detalles">
+            <p><strong>Ingredientes:</strong> 1 tortilla integral, 100g de pechuga de pollo cocida, 1/2 taza de lechuga,
+                1/4 taza de zanahoria rallada, 1 cucharada de hummus.</p>
+            <p><strong>Instrucciones:</strong> Unta el hummus sobre la tortilla, agrega el pollo y las verduras, enrolla
+                y corta por la mitad.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles8')">
+        <h2>Sopa de Lentejas</h2>
+        <div id="detalles8" class="detalles">
+            <p><strong>Ingredientes:</strong> 1 taza de lentejas, 1 zanahoria picada, 1 cebolla picada, 2 dientes de
+                ajo, 4 tazas de caldo de verduras.</p>
+            <p><strong>Instrucciones:</strong> Sofríe la cebolla y el ajo, añade las lentejas, la zanahoria y el caldo.
+                Cocina a fuego lento durante 30 minutos.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles9')">
+        <h2>Pasta Integral con Verduras</h2>
+        <div id="detalles9" class="detalles">
+            <p><strong>Ingredientes:</strong> 200g de pasta integral, 1 taza de brócoli, 1/2 taza de pimientos, 1/4 taza
+                de aceite de oliva, sal y pimienta al gusto.</p>
+            <p><strong>Instrucciones:</strong> Cocina la pasta según las instrucciones. Sofríe las verduras en el aceite
+                de oliva y mezcla con la pasta cocida.</p>
+        </div>
+    </div>
+
+    <div class="receta" onclick="toggleDetalles('detalles10')">
+        <h2>Chía Pudding</h2>
+        <div id="detalles10" class="detalles">
+            <p><strong>Ingredientes:</strong> 1/4 taza de semillas de chía, 1 taza de leche de coco, 1 cucharada de
+                miel, frutas para decorar.</p>
+            <p><strong>Instrucciones:</strong> Mezcla las semillas de chía con la leche de coco y la miel. Deja reposar
+                en el refrigerador durante al menos 2 horas. Sirve con frutas.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetalles(detallesId) {
+            const detalles = document.getElementById(detallesId);
+            if (detalles.style.display === "none" || detalles.style.display === "") {
+                detalles.style.display = "block"; // Muestra los detalles
+            } else {
+                detalles.style.display = "none"; // Oculta los detalles
+            }
+        }
+    </script>
+    <a href="/" class="button">Ir a la página principal</a>
+</body>
+
+</html>

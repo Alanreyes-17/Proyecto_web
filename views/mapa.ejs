@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Ubicaciones</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #map {
+            height: 600px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            margin: auto;
+            background-color: #222;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mapa de Ubicaciones de Gimnasios</h1>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([21.8853, -102.2916], 12); // Centrar en Aguascalientes
+
+        // Capa de mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        const gimnasios = [
+            { nombre: "Gimnasio 1", latitud: 21.8853, longitud: -102.2916 },
+            { nombre: "Gimnasio 2", latitud: 21.8953, longitud: -102.3016 },
+            { nombre: "Gimnasio 3", latitud: 21.8753, longitud: -102.2806 },
+            { nombre: "Gimnasio Fitness Pro", latitud: 21.8840, longitud: -102.2900 },
+            { nombre: "Gimnasio Power", latitud: 21.8900, longitud: -102.3050 },
+            { nombre: "Gimnasio Saludable", latitud: 21.8800, longitud: -102.2750 }
+        ];
+
+        // Agregar marcadores para cada gimnasio
+        gimnasios.forEach(gimnasio => {
+            L.marker([gimnasio.latitud, gimnasio.longitud])
+                .addTo(map)
+                .bindPopup(gimnasio.nombre);
+        });
+
+    </script>
+    <a href="/" class="button">Ir a la página principal</a>
+</body>
+
+</html>
